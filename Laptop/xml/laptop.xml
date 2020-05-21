@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<CompoundLaptop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>ASUS fx 505g</Name>
+  <components>
+    <AbstractLaptop xsi:type="CompoundBody">
+      <Name>ASUS Body</Name>
+      <components>
+        <AbstractLaptop xsi:type="Keyboard">
+          <Name>ASUS keyboard</Name>
+          <Gold>0.152</Gold>
+          <Plastic>125.5</Plastic>
+        </AbstractLaptop>
+        <AbstractLaptop xsi:type="Screen">
+          <Name>ASUS screen</Name>
+          <Platinum>0.411</Platinum>
+          <Glass>0.252</Glass>
+        </AbstractLaptop>
+        <AbstractLaptop xsi:type="Touchpad">
+          <Name>ASUS touchpad</Name>
+          <Silver>0.147</Silver>
+          <Platinum>0.111</Platinum>
+          <Plastic>54.9</Plastic>
+        </AbstractLaptop>
+      </components>
+    </AbstractLaptop>
+    <AbstractLaptop xsi:type="CompoundInsides">
+      <Name>ASUS Insides</Name>
+      <components>
+        <AbstractLaptop xsi:type="CompoundMotherboard">
+          <Name>ASUS Motherboard</Name>
+          <components>
+            <AbstractLaptop xsi:type="RAM">
+              <Name>ASUS RAM</Name>
+              <Silver>0.425</Silver>
+              <Gold>0.33</Gold>
+              <Platinum>1.111</Platinum>
+              <Plastic>5.25</Plastic>
+            </AbstractLaptop>
+            <AbstractLaptop xsi:type="CPU">
+              <Name>ASUS CPU</Name>
+              <Silver>2.131</Silver>
+              <Gold>1.252</Gold>
+              <Platinum>0.511</Platinum>
+              <Plastic>0</Plastic>
+            </AbstractLaptop>
+            <AbstractLaptop xsi:type="VideoCard">
+              <Name>ASUS Video card</Name>
+              <Silver>0.231</Silver>
+              <Gold>0.152</Gold>
+              <Platinum>0.311</Platinum>
+              <Plastic>50.2</Plastic>
+            </AbstractLaptop>
+          </components>
+        </AbstractLaptop>
+        <AbstractLaptop xsi:type="Cooler">
+          <Name>ASUS cooler</Name>
+          <Silver>0.153</Silver>
+          <Iron>0.147</Iron>
+          <Plastic>0.111</Plastic>
+        </AbstractLaptop>
+      </components>
+    </AbstractLaptop>
+  </components>
+</CompoundLaptop>

@@ -2,20 +2,31 @@
 
 namespace Laptop
 {
-    internal class Keyboard : AbstractComponent, ILaptop
+    [Serializable]
+    public class Keyboard : AbstractLaptop
     {
-        public Keyboard(string name, double gold, double silver, double platium, double plastic) : base(name, gold, silver, platium, plastic)
+        public Keyboard()
         {
         }
 
-        public double GetSumOfPlastic()
+        public Keyboard(string name, double gold, double plastic) : base(name)
+        {
+            Gold = gold;
+            Plastic = plastic;
+        }
+
+        public double Gold { get; set; }
+
+        public double Plastic { get; set; }
+
+        public override double GetSumOfPlastic()
         {
             return this.Plastic;
         }
 
-        public double GetSumOfValidMetal()
+        public override double GetSumOfValidMetal()
         {
-            return this.Gold + this.Platinum + this.Silver;
+            return this.Gold;
         }
     }
 }

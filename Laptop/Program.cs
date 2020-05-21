@@ -10,25 +10,44 @@ namespace Laptop
         {
             CompoundLaptop laptop = new CompoundLaptop("ASUS fx 505g");
             laptop.AddComponent(new CompoundBody("ASUS Body",
-                                                 new Keyboard("ASUS keyboard", 0.152, 0.231, 0.011, 125.5),
-                                                 new Screen("ASUS screen", 0.252, 0.131, 0.411, 0.0),
-                                                 new Touchpad("ASUS touchpad", 0.153, 0.147, 0.111, 54.9)));
+                                                 new Keyboard("ASUS keyboard", 0.152, 125.5),
+                                                 new Screen("ASUS screen", 0.252, 0.411),
+                                                 new Touchpad("ASUS touchpad", 0.147, 0.111, 54.9)));
             laptop.AddComponent(new CompoundInsides("ASUS Insides",
                                                     new CompoundMotherboard(
                                                         "ASUS Motherboard",
                                                         new RAM("ASUS RAM", 0.33, 0.425, 1.111, 5.25),
                                                         new CPU("ASUS CPU", 1.252, 2.131, 0.511, 0.0),
                                                         new VideoCard("ASUS Video card", 0.152, 0.231, 0.311, 50.2)),
-                                                    new Cooler("ASUS cooler", 0.153, 0.147, 0.111, 0.0)));
+                                                    new Cooler("ASUS cooler", 0.153, 0.147, 0.111)));
             return laptop;
+        }
+
+        private static void SerializeLaptop(string path, CompoundLaptop laptop)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(CompoundLaptop));
+
+            try
+            {
+                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+                {
+                    formatter.Serialize(fs, laptop);
+                    Console.WriteLine("Об'єкт успiшно серiалiзовано до " + path);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Cерiалiзацiя завершилась невдало.");
+            }
         }
 
         private static void Main(string[] args)
         {
             CompoundLaptop laptop = CreateLaptop();
-            Console.WriteLine($"Ноутбук {laptop.NameLaptop}:");
+            Console.WriteLine($"Ноутбук {laptop.Name}:");
             Console.WriteLine($"Пластику - {laptop.GetSumOfPlastic():f2} грамiв");
-            Console.WriteLine($"Цiнних металiв - {laptop.GetSumOfValidMetal():f2} грамiв");            
+            Console.WriteLine($"Цiнних металiв - {laptop.GetSumOfValidMetal():f2} грамiв");
+            SerializeLaptop(@"C:\Users\Danyil Korotych\Desktop\Patterns\Laptop\xml\laptop.xml", laptop);
         }
     }
 }

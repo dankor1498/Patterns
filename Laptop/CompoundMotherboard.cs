@@ -2,17 +2,22 @@
 
 namespace Laptop
 {
-    internal class CompoundMotherboard : ILaptop
+    [Serializable]
+    public class CompoundMotherboard : AbstractLaptop
     {
-        private ILaptop[] components;
-        public string Name { get; private set; }
-        public CompoundMotherboard(string name, RAM ram, CPU cpu, VideoCard videoCard)
+        public AbstractLaptop[] components;
+
+        public CompoundMotherboard()
         {
-            components = new ILaptop[3] { ram, cpu, videoCard };
+        }
+
+        public CompoundMotherboard(string name, RAM ram, CPU cpu, VideoCard videoCard) : base(name)
+        {
+            components = new AbstractLaptop[3] { ram, cpu, videoCard };
             Name = name;
         }
 
-        public double GetSumOfPlastic()
+        public override double GetSumOfPlastic()
         {
             double sum = 0.0;
             foreach (var item in components)
@@ -22,7 +27,7 @@ namespace Laptop
             return sum;
         }
 
-        public double GetSumOfValidMetal()
+        public override double GetSumOfValidMetal()
         {
             double sum = 0.0;
             foreach (var item in components)

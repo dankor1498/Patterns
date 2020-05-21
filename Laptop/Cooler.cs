@@ -2,20 +2,32 @@
 
 namespace Laptop
 {
-    internal class Cooler : AbstractComponent, ILaptop
+    [Serializable]
+    public class Cooler : AbstractLaptop
     {
-        public Cooler(string name, double gold, double silver, double platium, double plastic) : base(name, gold, silver, platium, plastic)
+        public Cooler()
         {
         }
 
-        public double GetSumOfPlastic()
+        public Cooler(string name, double silver, double iron, double plastic) : base(name)
+        {
+            Silver = silver;
+            Iron = iron;
+            Plastic = plastic;
+        }
+
+        public double Silver { get; set; }
+        public double Iron { get; set; }
+        public double Plastic { get; set; }
+
+        public override double GetSumOfPlastic()
         {
             return this.Plastic;
         }
 
-        public double GetSumOfValidMetal()
+        public override double GetSumOfValidMetal()
         {
-            return this.Gold + this.Platinum + this.Silver;
+            return this.Silver;
         }
     }
 }

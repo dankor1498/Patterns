@@ -1,17 +1,22 @@
-﻿namespace Laptop
-{
-    internal class CompoundInsides : ILaptop
-    {
-        private ILaptop[] components;
-        public string Name { get; private set; }
+﻿using System;
 
-        public CompoundInsides(string name, CompoundMotherboard compoundMotherboard, Cooler cooler)
+namespace Laptop
+{
+    [Serializable]
+    public class CompoundInsides : AbstractLaptop
+    {
+        public AbstractLaptop[] components;
+
+        public CompoundInsides()
         {
-            components = new ILaptop[2] { compoundMotherboard, cooler };
-            Name = name;
         }
 
-        public double GetSumOfPlastic()
+        public CompoundInsides(string name, CompoundMotherboard compoundMotherboard, Cooler cooler) : base(name)
+        {
+            components = new AbstractLaptop[2] { compoundMotherboard, cooler };
+        }
+
+        public override double GetSumOfPlastic()
         {
             double sum = 0.0;
             foreach (var item in components)
@@ -21,7 +26,7 @@
             return sum;
         }
 
-        public double GetSumOfValidMetal()
+        public override double GetSumOfValidMetal()
         {
             double sum = 0.0;
             foreach (var item in components)

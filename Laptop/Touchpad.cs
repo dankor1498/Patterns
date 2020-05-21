@@ -1,21 +1,30 @@
-﻿using System;
-
-namespace Laptop
+﻿namespace Laptop
 {
-    internal class Touchpad : AbstractComponent, ILaptop
+    public class Touchpad : AbstractLaptop
     {
-        public Touchpad(string name, double gold, double silver, double platium, double plastic) : base(name, gold, silver, platium, plastic)
+        public Touchpad()
         {
         }
 
-        public double GetSumOfPlastic()
+        public Touchpad(string name, double silver, double platium, double plastic) : base(name)
+        {
+            Silver = silver;
+            Platinum = platium;
+            Plastic = plastic;
+        }
+
+        public double Silver { get; set; }
+        public double Platinum { get; set; }
+        public double Plastic { get; set; }
+
+        public override double GetSumOfPlastic()
         {
             return this.Plastic;
         }
 
-        public double GetSumOfValidMetal()
+        public override double GetSumOfValidMetal()
         {
-            return this.Gold + this.Platinum + this.Silver;
+            return this.Platinum + this.Silver;
         }
     }
 }

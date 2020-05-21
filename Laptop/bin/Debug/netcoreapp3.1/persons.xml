@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<Cooler xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>ASUS cooler</Name>
-  <Gold>0.153</Gold>
-  <Silver>0.147</Silver>
-  <Platinum>0.111</Platinum>
-  <Plastic>0</Plastic>
-</Cooler>
+<VideoCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>ASUS Video card</Name>
+  <Gold>0.152</Gold>
+  <Silver>0.231</Silver>
+  <Platinum>0.311</Platinum>
+  <Plastic>50.2</Plastic>
+</VideoCard>

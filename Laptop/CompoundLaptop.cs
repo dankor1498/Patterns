@@ -1,57 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace Laptop
 {
-    internal class CompoundLaptop : ILaptop
+    [Serializable]
+    public class CompoundLaptop : AbstractLaptop
     {
-        public string NameLaptop { get; private set; }
-        public List<ILaptop> all = new List<ILaptop>();
+        public List<AbstractLaptop> components = new List<AbstractLaptop>();
 
-        public CompoundLaptop(string nameLaptop)
+        public CompoundLaptop(string nameLaptop) : base(nameLaptop)
         {
-            NameLaptop = nameLaptop;
         }
 
-        public CompoundLaptop() { }
-
-        public void AddComponent(ILaptop laptop)
+        public CompoundLaptop()
         {
-            all.Add(laptop);
         }
 
-        public double GetSumOfPlastic()
+        public void AddComponent(AbstractLaptop laptop)
+        {
+            components.Add(laptop);
+        }
+
+        public override double GetSumOfPlastic()
         {
             double sum = 0.0;
-            foreach (var item in all)
+            foreach (var item in components)
             {
                 sum += item.GetSumOfPlastic();
             }
             return sum;
         }
 
-        public double GetSumOfValidMetal()
+        public override double GetSumOfValidMetal()
         {
             double sum = 0.0;
-            foreach (var item in all)
+            foreach (var item in components)
             {
                 sum += item.GetSumOfValidMetal();
             }
             return sum;
-        }
-
-        public void SerializeLaptop()
-        {
-            //XmlSerializer formatter = new XmlSerializer(typeof(Person));
-
-            //using (FileStream fs = new FileStream("persons.xml", FileMode.OpenOrCreate))
-            //{
-            //    formatter.Serialize(fs, person);
-
-            //    Console.WriteLine("Объект сериализован");
-            //}
         }
     }
 }

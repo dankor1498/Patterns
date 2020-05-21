@@ -1,21 +1,28 @@
-﻿using System;
-
-namespace Laptop
+﻿namespace Laptop
 {
-    internal class Screen : AbstractComponent, ILaptop
+    public class Screen : AbstractLaptop
     {
-        public Screen(string name, double gold, double silver, double platium, double plastic) : base(name, gold, silver, platium, plastic)
+        public Screen()
         {
         }
 
-        public double GetSumOfPlastic()
+        public Screen(string name, double glass, double platium) : base(name)
         {
-            return this.Plastic;
+            Platinum = platium;
+            Glass = glass;
         }
 
-        public double GetSumOfValidMetal()
+        public double Platinum { get; set; }
+        public double Glass { get; set; }
+
+        public override double GetSumOfPlastic()
         {
-            return this.Gold + this.Platinum + this.Silver;
+            return 0.0;
+        }
+
+        public override double GetSumOfValidMetal()
+        {
+            return this.Platinum;
         }
     }
 }

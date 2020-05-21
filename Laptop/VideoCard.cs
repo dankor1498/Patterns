@@ -2,18 +2,32 @@
 
 namespace Laptop
 {
-    internal class VideoCard : AbstractComponent, ILaptop
+    [Serializable]
+    public class VideoCard : AbstractLaptop
     {
-        public VideoCard(string name, double gold, double silver, double platium, double plastic) : base(name, gold, silver, platium, plastic)
+        public VideoCard()
         {
         }
 
-        public double GetSumOfPlastic()
+        public VideoCard(string name, double gold, double silver, double platinum, double plastic) : base(name)
+        {
+            Silver = silver;
+            Gold = gold;
+            Platinum = platinum;
+            Plastic = plastic;
+        }
+
+        public double Silver { get; set; }
+        public double Gold { get; set; }
+        public double Platinum { get; set; }
+        public double Plastic { get; set; }
+
+        public override double GetSumOfPlastic()
         {
             return this.Plastic;
         }
 
-        public double GetSumOfValidMetal()
+        public override double GetSumOfValidMetal()
         {
             return this.Gold + this.Platinum + this.Silver;
         }
