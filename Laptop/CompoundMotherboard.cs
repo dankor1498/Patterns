@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Laptop
 {
@@ -14,7 +15,21 @@ namespace Laptop
         public CompoundMotherboard(string name, RAM ram, CPU cpu, VideoCard videoCard) : base(name)
         {
             components = new AbstractLaptop[3] { ram, cpu, videoCard };
-            Name = name;
+        }
+
+        public override double Accept(IVisitor visitor)
+        {
+            return visitor.Visit(this);
+        }
+
+        public override List<AbstractLaptop> GetItems()
+        {
+            List<AbstractLaptop> abstractLaptops = new List<AbstractLaptop>();
+            foreach (var item in components)
+            {
+                abstractLaptops.AddRange(item.GetItems());
+            }
+            return abstractLaptops;
         }
 
         public override double GetSumOfPlastic()

@@ -44,7 +44,7 @@
               <Plastic>0</Plastic>
             </AbstractLaptop>
             <AbstractLaptop xsi:type="VideoCard">
-              <Name>ASUS Video card</Name>
+              <Name>ASUS video card</Name>
               <Silver>0.231</Silver>
               <Gold>0.152</Gold>
               <Platinum>0.311</Platinum>

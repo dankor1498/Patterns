@@ -40,5 +40,20 @@ namespace Laptop
             }
             return sum;
         }
+
+        public override double Accept(IVisitor visitor)
+        {
+            return visitor.Visit(this);
+        }
+
+        public override List<AbstractLaptop> GetItems()
+        {
+            List<AbstractLaptop> abstractLaptops = new List<AbstractLaptop>();
+            foreach (var item in components)
+            {
+                abstractLaptops.AddRange(item.GetItems());
+            }
+            return abstractLaptops;
+        }
     }
 }

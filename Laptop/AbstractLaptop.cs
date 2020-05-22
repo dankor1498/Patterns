@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Laptop
@@ -31,5 +32,9 @@ namespace Laptop
         public abstract double GetSumOfValidMetal();
 
         public abstract double GetSumOfPlastic();
+
+        public abstract List<AbstractLaptop> GetItems();
+
+        public abstract double Accept(IVisitor visitor);
     }
 }
