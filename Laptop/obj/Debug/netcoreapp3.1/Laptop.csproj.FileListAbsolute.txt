@@ -24,3 +24,16 @@ C:\Users\Danyil Korotych\Desktop\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.
 C:\Users\Danyil Korotych\Desktop\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.dll
 C:\Users\Danyil Korotych\Desktop\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.pdb
 C:\Users\Danyil Korotych\Desktop\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.genruntimeconfig.cache
+E:\Documents\GitHub\Patterns\Laptop\bin\Debug\netcoreapp3.1\Laptop.exe
+E:\Documents\GitHub\Patterns\Laptop\bin\Debug\netcoreapp3.1\Laptop.deps.json
+E:\Documents\GitHub\Patterns\Laptop\bin\Debug\netcoreapp3.1\Laptop.runtimeconfig.json
+E:\Documents\GitHub\Patterns\Laptop\bin\Debug\netcoreapp3.1\Laptop.runtimeconfig.dev.json
+E:\Documents\GitHub\Patterns\Laptop\bin\Debug\netcoreapp3.1\Laptop.dll
+E:\Documents\GitHub\Patterns\Laptop\bin\Debug\netcoreapp3.1\Laptop.pdb
+E:\Documents\GitHub\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.csprojAssemblyReference.cache
+E:\Documents\GitHub\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.AssemblyInfoInputs.cache
+E:\Documents\GitHub\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.AssemblyInfo.cs
+E:\Documents\GitHub\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.dll
+E:\Documents\GitHub\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.pdb
+E:\Documents\GitHub\Patterns\Laptop\obj\Debug\netcoreapp3.1\Laptop.genruntimeconfig.cache

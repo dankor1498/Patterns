@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace Laptop
 {
     [Serializable]
-    public class CompoundBody : AbstractLaptop
+    public class CompoundBody : AbstracComponent
     {
-        public AbstractLaptop[] components;
+        public AbstracComponent[] components;
 
         public CompoundBody()
         {
@@ -14,7 +14,7 @@ namespace Laptop
 
         public CompoundBody(string name, Keyboard keyboard, Screen screen, Touchpad touchpad) : base(name)
         {
-            components = new AbstractLaptop[3] { keyboard, screen, touchpad };
+            components = new AbstracComponent[3] { keyboard, screen, touchpad };
         }
 
         public override double Accept(IVisitor visitor)
@@ -22,9 +22,9 @@ namespace Laptop
             return visitor.Visit(this);
         }
 
-        public override List<AbstractLaptop> GetItems()
+        public override List<AbstracComponent> GetItems()
         {
-            List<AbstractLaptop> abstractLaptops = new List<AbstractLaptop>();
+            List<AbstracComponent> abstractLaptops = new List<AbstracComponent>();
             foreach (var item in components)
             {
                 abstractLaptops.AddRange(item.GetItems());

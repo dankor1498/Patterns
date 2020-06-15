@@ -67,8 +67,14 @@ namespace Laptop
             Console.WriteLine("Composite + Visitor: ");
             Console.WriteLine($"Цiнних металiв - {laptop.Accept(new ValidMetalVisitor()):f2} грамiв\n");
 
+
+            //foreach (var item in laptop.GetItems())
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
+
             GetLINQPlastic(laptop);            
-            SerializeLaptop(@"C:\Users\Danyil Korotych\Desktop\Patterns\Laptop\xml\laptop.xml", laptop);
+            SerializeLaptop(@"E:\Documents\GitHub\Patterns\Laptop\xml\laptop.xml", laptop);
         }
     }
 }

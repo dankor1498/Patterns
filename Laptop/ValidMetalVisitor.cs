@@ -6,6 +6,10 @@ namespace Laptop
 {
     public class ValidMetalVisitor : IVisitor
     {
+        public ValidMetalVisitor()
+        {
+        }
+
         public double Visit(CompoundLaptop compoundLaptop)
         {
             return compoundLaptop.GetSumOfValidMetal();

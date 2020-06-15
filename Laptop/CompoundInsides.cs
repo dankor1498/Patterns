@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace Laptop
 {
     [Serializable]
-    public class CompoundInsides : AbstractLaptop
+    public class CompoundInsides : AbstracComponent
     {
-        public AbstractLaptop[] components;
+        public AbstracComponent[] components;
 
         public CompoundInsides()
         {
@@ -14,7 +14,7 @@ namespace Laptop
 
         public CompoundInsides(string name, CompoundMotherboard compoundMotherboard, Cooler cooler) : base(name)
         {
-            components = new AbstractLaptop[2] { compoundMotherboard, cooler };
+            components = new AbstracComponent[2] { compoundMotherboard, cooler };
         }
 
         public override double Accept(IVisitor visitor)
@@ -22,9 +22,9 @@ namespace Laptop
             return visitor.Visit(this);
         }
 
-        public override List<AbstractLaptop> GetItems()
+        public override List<AbstracComponent> GetItems()
         {
-            List<AbstractLaptop> abstractLaptops = new List<AbstractLaptop>();
+            List<AbstracComponent> abstractLaptops = new List<AbstracComponent>();
             foreach (var item in components)
             {
                 abstractLaptops.AddRange(item.GetItems());

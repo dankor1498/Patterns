@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Laptop
 {
     [Serializable]
-    public class Cooler : AbstractLaptop
+    public class Cooler : AbstracComponent
     {
         public Cooler()
         {
@@ -26,9 +26,9 @@ namespace Laptop
             return visitor.Visit(this);
         }
 
-        public override List<AbstractLaptop> GetItems()
+        public override List<AbstracComponent> GetItems()
         {
-            return new List<AbstractLaptop>() { this };
+            return new List<AbstracComponent>() { this };
         }
 
         public override double GetSumOfPlastic()

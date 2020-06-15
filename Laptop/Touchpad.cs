@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Laptop
 {
-    public class Touchpad : AbstractLaptop
+    [Serializable]
+    public class Touchpad : AbstracComponent
     {
         public Touchpad()
         {
@@ -24,9 +26,9 @@ namespace Laptop
             return visitor.Visit(this);
         }
 
-        public override List<AbstractLaptop> GetItems()
+        public override List<AbstracComponent> GetItems()
         {
-            return new List<AbstractLaptop>() { this };
+            return new List<AbstracComponent>() { this };
         }
 
         public override double GetSumOfPlastic()
