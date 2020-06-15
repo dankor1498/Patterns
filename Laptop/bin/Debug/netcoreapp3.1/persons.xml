@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<VideoCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>ASUS Video card</Name>
-  <Gold>0.152</Gold>
-  <Silver>0.231</Silver>
-  <Platinum>0.311</Platinum>
-  <Plastic>50.2</Plastic>
-</VideoCard>
